@@ -15,7 +15,7 @@
     // 스코프가 블록 단위
     const tmpconst1 = 1;
     // 같은 이름으로 다시 선언하지 못함
-    tmpconst1 = 2;
+    // tmpconst1 = 2;
     // const 는 값 재할당 불가능
 
     // 항상 처음 선언할 때는 const로 선언
@@ -23,9 +23,94 @@
     // 스코프를 늘려야 할 경우 var로 변경
 
     // 2. Arrow function
+    // es5 함수 선언문
+    function func1(item){
+        console.log(item);
+    }
+    let item = "앙.";
+    // js에서는 매개변수를 넣지않아도 작동된다.
+    func1(item);
+
+    // es6 함수 표현식
+    // 변수에 익명함수를 값으로 할당한다.
+    const func2 = function(item){
+        console.log(item)
+    }
+    func2(item);
+
+    // Arrow function, 람다식
+    // () => 내용 형태로 작성된다
+    // 한 줄일 경우 {} 생략가능
+    // 한 줄일 경우 return 문을 쓰지 않아도 return이 된다.
+    const func3 = (item) => "안녕하세요 " + item + "님";
+    // {} 를 사용할 경우 return 값이 필요할 때는 return을 적어줘야 한다.
+
+    console.log(func3("김종상"));
+
+    const func4 = (item) => {
+        return "안녕하세요, "+item+"님";
+    }
+    console.log(func4("홍길동"));
+
     // 3. 매개변수 기본값 설정 가능
+    // es5
+    function func6(tmp){
+        if (tmp == undefined){
+            console.log("값을 입력하시오.");
+        }else{
+            console.log(tmp);
+        }
+    }
+    func6();
+    // es6
+    const func5 = (tmp = "김종상") => console.log(tmp);
+    func5();
+
     // 4. 백틱
+    // 문자열을 더할 때 + 를 적어주는 것이 
+    // 매우 불편 -> 백틱(문자열 보관)
+    // 문자열에 변수를 적어줄 수 있다.
+    // 백틱(`) 사이에 ${변수} 형식으로 넣어준다.
+    const func7 = (item) => {
+        // return "안녕하세요, "+item+"님";
+        return `안녕하세요, ${item}님`;
+    }
+    console.log(func7(item))
+
+    const str1 = "동해물과 \n백두산이"
+    // 백틱을 쓰더라도 개행은 \n을 사용하는 것이 편함
+    const str2 = `동해물과 \n백두산이`;
+    console.log(str1);
+    console.log(str2);
     // 5. js 모듈 (여기서는 생략)
     // 6. 비구조화 할당
-    // 7. string 메소드 일부 추가
+    const arr1 = ["apple", "banana", "melon"];
+    
+    // es5 배열의 한 값을 가져올 때
+    const item1 = arr1[0]
+    const item2 = arr1[1]
+    const item3 = arr1[2]
+
+    // es6
+    const [item01,item02,item03] = arr1; //순서대로 값을 불러온다
+    // 순서대로 가져오기 때문에 뒤에 것 하나만 들고오기 어렵다.
+
+
+    const obj1 = {
+        name : "홍길이",
+        age : "24살",
+        say : () => `안녕하세요`
+
+    }
+    //es5
+    const name1 = obj1.name;
+    const age1 = obj1.age;
+    const say1 = obj1.say;
+
+    //es6
+    // property 명으로 값을 가져올 수 있다.
+    const {name01, age01, say01,} = obj1;
+
+    // 7. string 메소드 일부 추가(생략)
+
 </script>
