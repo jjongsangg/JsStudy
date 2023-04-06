@@ -1,0 +1,35 @@
+<script>
+    // 표준 라이브러리
+    // 필수 메소드
+
+    // 숫자관련 메소드
+    const num =1.53;
+    // 반올림 toFixed(자릿수)
+    console.log("반올림", num.toFixed(1));
+    console.log("반올림 Math Method",Math.round(num));
+    console.log("올림 Math Method", Math.ceil(num));
+    console.log("내림 Math Method", Math.floor(num));
+    console.log("문자열로 변경", num.toString());
+    console.log("난수 0 ~ 9", parseInt(Math.random()*10)); // Math.random = 0~1미만
+
+    // 문자열 관련 메소드
+    const str = "가나다라마바사";
+    console.log(str.charAt(0)); // == console.log(str[0]);
+    console.log("문자열 뒤에 추가 |", str.concat("아자"));
+    console.log("해당 문자열이 무슨 글자로 끝나는가 |",str.endsWith("사")); // 사 true, 바사... true, 바 false
+    console.log("해당 문자열이 무슨 글자로 시작하는가 |",str.startsWith("나")); // 가 true 가나... true 나 false
+    console.log("문자열에 해당 문자를 포함하는지 true false return |",str.includes("다")); 
+    console.log("문자열 내의 해당 문자의 index를 return |",str.indexOf("가"));
+    console.log("문자열의 길이를 return |", str.length);
+    console.log("글자가 최소 10글자 이상 되어야한다 =>", str.padStart(10));
+    console.log("문자열 반복 |",str.repeat(5));
+    console.log("문자열 내의 문자 수정 |", str.replace("가","나"));
+    console.log("문자열 내의 문자전부 수정 |", str.replaceAll("가","나"));
+    console.log("문자열의 s 부터 e 앞까지 짜르기 |", str.slice(1,3)); //str.slice(s,e);
+    console.log("문자열을 기준으로 쪼개서 배열로 반환 |", str.split("라")); // 기준 문자는 삭제됨
+    console.log(".substring == .slice |", str.substring(1,3));
+    console.log(".substr(s,c) => s index부터 c개의 문자 반환 |", str.substr(1,3)); // != substring
+    console.log("문자열 => 소문자 |", str.toLowerCase());
+    console.log("문자열 => 대문자 |", str.toUpperCase());
+    console.log("trim = 좌우공백 제거 |", str.padStart(10).trim()); //중간공백 "X"
+</script>
