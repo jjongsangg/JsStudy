@@ -7,4 +7,28 @@
     }
     const babbling = ["aya", "yee", "u", "maa", "wyeoo"];
     console.log(solution(babbling));
+
+    const solution1 = (info, query) => {
+    var answer = new Array(query.length);
+    answer.fill(0);
+    let players = new Array(info.length);
+    let conditions = new Array(query.length);
+    for(i = 0; i < players.length; i ++){
+        players[i] = info[i].split(" ");
+    }
+    for(i = 0; i <query.length; i++){
+        for(j = 0; j<players.length; j++){
+            let tmp = query[i].split(" and ")[3].split(" ");
+            if((query[i].split(" and ")[0] == "-" || query[i].split(" and ")[0] == players[j][0]) &&
+               (query[i].split(" and ")[1] == "-" || query[i].split(" and ")[1] == players[j][1]) && 
+               (query[i].split(" and ")[2] == "-" || query[i].split(" and ")[2] == players[j][2]) && 
+               (query[i].split(" and ")[3] == "-" || tmp[0] == players[j][3]) && 
+               (query[i].split(" and ")[4] == "-" || parseInt(tmp[1]) <= parseInt(players[j][4]))){
+                answer[i]++;
+            }
+        }
+    }
+    console.log(conditions[3], players);
+    return answer;
+}
 </script>
