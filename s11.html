@@ -90,37 +90,42 @@
     //console.log(result);
 
     //객체
-    var obj = { //객체는 key : value 타입
-        // 객체가 가지고 있는 변수 = field or property
-        key1 : "value1",
-        // 객체가 가지고있는 함수 = Method
-        key2(params){
-            this.key1;
-        },
-        // 객체는 객체를 property로 가질 수 있다.
-        key3 : {
-            subkey : "subvalue"
-        }
-    }
+    // var obj = { //객체는 key : value 타입
+    //     // 객체가 가지고 있는 변수 = field or property
+    //     key1 : "value1",
+    //     // 객체가 가지고있는 함수 = Method
+    //     key2(params){
+    //         this.key1;
+    //     },
+    //     // 객체는 객체를 property로 가질 수 있다.
+    //     key3 : {
+    //         subkey : "subvalue"
+    //     }
+    // }
 
-    obj?.key3?.subkey;
+    // obj?.key3?.subkey;
     //Date
-    console.log('Date.now() :' + Date.now());
-    const myDate = new Date();
-    const tmpDate = new Date('2023-01-01T12:00:00.000z');
-    console.log(myDate);
-    console.log(tmpDate);
+    // console.log('Date.now() :' + Date.now());
+    // const myDate = new Date();
+    // const tmpDate = new Date('2023-01-01T12:00:00.000z');
+    // console.log(myDate);
+    // console.log(tmpDate);
 
-    console.log(`myDate.getFullYear : ${myDate.getFullYear()}`);
-    console.log(`myDate.getMonth : ${myDate.getMonth()+1}`); // Date 객체에서는 1월이 0, 2월이 1 ...
-    console.log(`myDate.getDate : ${myDate.getDate()}`); 
-    console.log(`myDate.getDay : ${myDate.getDay()}`);  // 일0원1화2수3목4금5토6
-    console.log(`myDate.toJson() : ${myDate.toJSON()}`);
-    console.log(`myDate.toISOString() : ${myDate.toISOString()}`);
-    console.log(`myDate.toLocaleDateString() : ${myDate.toLocaleDateString()}`);
-    console.log(`myDate.toLocaleString() : ${myDate.toLocaleString()}`);
-    console.log(`myDate.toLocaleTimeString() : ${myDate.toLocaleTimeString()}`);
-    console.log(`myDate.toTimeString() : ${myDate.toTimeString()}`);
-    console.log(`myDate.toUTCString() : ${myDate.toUTCString()}`);
-    console.log(`myDate.getTimezoneOffset() : ${myDate.getTimezoneOffset()}`);
+    // console.log(`myDate.getFullYear : ${myDate.getFullYear()}`);
+    // console.log(`myDate.getMonth : ${myDate.getMonth()+1}`); // Date 객체에서는 1월이 0, 2월이 1 ...
+    // console.log(`myDate.getDate : ${myDate.getDate()}`); 
+    // console.log(`myDate.getDay : ${myDate.getDay()}`);  // 일0원1화2수3목4금5토6
+    // console.log(`myDate.toJson() : ${myDate.toJSON()}`);
+    // console.log(`myDate.toISOString() : ${myDate.toISOString()}`);
+    // console.log(`myDate.toLocaleDateString() : ${myDate.toLocaleDateString()}`);
+    // console.log(`myDate.toLocaleString() : ${myDate.toLocaleString()}`);
+    // console.log(`myDate.toLocaleTimeString() : ${myDate.toLocaleTimeString()}`);
+    // console.log(`myDate.toTimeString() : ${myDate.toTimeString()}`);
+    // console.log(`myDate.toUTCString() : ${myDate.toUTCString()}`);
+    // console.log(`myDate.getTimezoneOffset() : ${myDate.getTimezoneOffset()}`);
+
+    const a = 1;
+    b = 1;
+    console.log(window.a);
+    console.log(window.b);
 </script>
