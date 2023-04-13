@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">제목</h1>
+    <h1>제목</h1>
+    <div id="myDiv" style="color:bisque;">앙</div>
+    <div id="myDiv" onclick="func()">앙</div>
+
+    <p class="my-div first">첫번째</p>
+    <p class="my-div second">두번째</p>
+    <script>
+        const h1List = document.getElementsByTagName('h1');
+        //console.log(h1List);
+        //h1List[1].textContent = "제목1";
+        const title = document.getElementById('title');
+        //title.textContent = "제목2";
+        //console.log(title);
+        //title.setAttribute("style", "color:red");
+        const h1List2 = document.querySelectorAll("h1");
+        //console.log(h1List2);
+
+        const mydiv = document.querySelector("body > #myDiv");
+        const mydiv2 = document.querySelector("div[id*='my']");
+        //console.log(mydiv);
+        //console.log(mydiv2);
+
+        const pElList = document.getElementsByClassName("my-div");
+        const pElList1 = document.querySelectorAll("p.my-div");
+        pElList1.forEach(element => {
+            console.log(element.innerText);
+        });
+
+        // 1. 속성 지정
+        //mydiv.setAttribute("style","color : blue");
+        // 표준속성은 .으로 찾아서 입력.
+        mydiv.innerText = "앙!";
+        //mydiv.style.color = "red";
+        // !표준속성은 setAttribute로 사용
+        mydiv.setAttribute("asdf", "기분좋다"); // !표준 속성
+
+        // 2. Tag에 기능
+        const func = () =>{
+            alert("기모찌");
+        }
+        mydiv.onclick = func;
+        // console.log(mydiv.onclick);
+        mydiv.onclick = null;
+
+        // 3. 리스너
+        mydiv.addEventListener("click",func);
+        mydiv.addEventListener("click",()=>{
+            alert("두번째 기모찌");
+        });
+        mydiv.removeEventListener("click",func);
+
+        // 태그 만들기
+        const newElement = document.createElement("div");
+        newElement.innerText = "앙기모띠";
+        newElement.onclick = ()=>alert("태어났다!");
+        document.body.appendChild(newElement);
+        const newElement1 = document.createElement("h2");
+        newElement1.innerText = "교체 모찌";
+        document.body.replaceChild(newElement1, newElement);
+        document.body.removeChild(newElement1);
+
+        // 클래스
+        const divElement = document.querySelector(".my-div");
+        console.log(divElement.className);
+        console.log(divElement.classList);
+
+        // divElement.className = "check-class";
+        divElement.classList.add("check-class");
+        
+        // css 가져오기
+        console.log(mydiv.style.color);
+        console.log(getComputedStyle(mydiv).color);
+    </script>
+</body>
+</html>
