@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input id="no" type="text" />
+      <button onclick="addContent()">내용추가</button>
+      <button onclick="deleteContent()">내용삭제</button>
+    </div>
+    <div id="content"><p>내용입니다.</p></div>
+  </body>
+  <script>
+    let count = 0;
+    const addContent = () => {
+      const content = document.getElementById("content");
+      content.insertAdjacentHTML(
+        "beforeend",
+        `<p id='${count}'>${count}번째 추가된 내용입니다.`
+      );
+      count ++;
+    };
+    const deleteContent = () => {
+      const count = content.children.length;
+      if (no.value) {
+        document.getElementById(`${no.value}`)?.remove();
+      } else {
+        document.getElementById("content").lastChild?.remove();
+      }
+    };
+  </script>
+</html>

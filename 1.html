@@ -7,7 +7,6 @@
     }
     const babbling = ["aya", "yee", "u", "maa", "wyeoo"];
     console.log(solution(babbling));
-
     const solution1 = (info, query) => {
     var answer = new Array(query.length);
     answer.fill(0);
@@ -16,6 +15,7 @@
     for(i = 0; i < players.length; i ++){
         players[i] = info[i].split(" ");
     }
+
     for(i = 0; i <query.length; i++){
         for(j = 0; j<players.length; j++){
             let tmp = query[i].split(" and ")[3].split(" ");
